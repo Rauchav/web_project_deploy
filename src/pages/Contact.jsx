@@ -219,7 +219,7 @@ function Contact() {
   return (
     <>
       <Seo
-        title="Free Consultation | Get Your Custom Growth Strategy – Deploy Studio"
+        title="Free Consultation | Custom Growth Strategy – Deploy Studio"
         description="Get a free, personalized consultation from Deploy Studio. Tell us about your business and marketing goals — no sales call, no commitment."
         path="/contact"
       />

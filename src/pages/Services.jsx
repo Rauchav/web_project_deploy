@@ -20,8 +20,8 @@ function Services() {
   return (
     <>
       <Seo
-        title="Our Services | Web Development, Digital Marketing & Content Creation – Deploy Studio"
-        description="Explore Deploy Studio's services: custom web development, data-driven digital marketing, and content creation designed to convert, retain, and grow your brand."
+        title="Our Services | Web Dev, Marketing & Content – Deploy Studio"
+        description="Explore Deploy Studio's services: web development, digital marketing, and content creation built to convert, retain, and grow your brand."
         path="/services"
       />
       <main className="services">

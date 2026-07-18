@@ -64,8 +64,8 @@ function Home() {
   return (
     <>
       <Seo
-        title="Deploy Studio | Websites, Marketing & Content That Grow Your Business"
-        description="Deploy Studio builds stunning websites, automates your marketing, and creates great content so your business can grow faster. Explore our web development, digital marketing, and content creation services."
+        title="Deploy Studio | Websites, Marketing & Content Growth"
+        description="Deploy Studio builds stunning websites, automates your marketing, and creates content that helps your business grow faster and convert more customers."
         path="/"
       />
       <main className="home">
