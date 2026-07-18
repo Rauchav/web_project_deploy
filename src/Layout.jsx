@@ -4,10 +4,12 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollAnimator from "./components/ScrollAnimator";
+import OrganizationSchema from "./components/OrganizationSchema";
 
 function Layout() {
   return (
     <StrictMode>
+      <OrganizationSchema />
       <ScrollToTop />
       <ScrollAnimator />
       <Navbar />
