@@ -1,0 +1,171 @@
+/* ============================================================
+   Navbar component styles
+   ============================================================ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: transparent;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  box-shadow: none;
+  transform: translateY(0);
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    backdrop-filter 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.navbar--scrolled {
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+}
+
+.navbar--hidden {
+  transform: translateY(-100%);
+}
+
+.navbar__logo {
+  width: 100px;
+}
+
+.navbar__list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__link {
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.95rem;
+  transition: color 0.15s ease;
+}
+
+.navbar__link:hover {
+  color: #fcb514;
+}
+
+.navbar__link--active {
+  font-weight: 600;
+  color: #fcb514;
+}
+
+/* ── Hamburger button — hidden on desktop ─────────────────── */
+
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 1001;
+  width: 32px;
+  height: 32px;
+}
+
+.navbar__hamburger-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar__hamburger--open .navbar__hamburger-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar__hamburger--open .navbar__hamburger-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.navbar__hamburger--open .navbar__hamburger-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Mobile overlay — rendered outside header ─────────────── */
+
+.navbar__mobile-overlay {
+  display: none;
+}
+
+/* ── Mobile breakpoint ────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.25rem;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Hide desktop nav links */
+  .navbar__nav {
+    display: none;
+  }
+
+  .navbar__hamburger {
+    display: flex;
+  }
+
+  /* Full-screen overlay rendered as a sibling to the header */
+  .navbar__mobile-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.97);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .navbar__mobile-overlay--open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .navbar__mobile-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .navbar__mobile-link {
+    font-family: var(--font-base);
+    font-size: 1.4rem;
+    letter-spacing: 0.06em;
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .navbar__mobile-link:hover,
+  .navbar__mobile-link--active {
+    color: #fcb514;
+  }
+}

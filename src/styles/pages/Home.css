@@ -1,0 +1,478 @@
+/* ============================================================
+   Home page styles
+   ============================================================ */
+
+.home {
+}
+
+.home__hero {
+  position: relative;
+  background-image: url("../../assets/images/backgrounds/home-hero-background.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+.home__paralax {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1;
+  margin-bottom: -1px;
+  pointer-events: none;
+  animation: paralax-rise 1.6s cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s both;
+}
+
+@keyframes paralax-rise {
+  from {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home__paralax {
+    animation: none;
+  }
+}
+
+.hero__cta {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.603);
+  border-radius: 0 10px 10px 0;
+  padding: 50px 50px 50px 100px;
+  width: 50%;
+  z-index: 2;
+  bottom: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero__cta-h1 {
+  line-height: 50px;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* --- Home Sections ----------------------------------- */
+
+.home__section {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.home__section-cont {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+}
+
+.home__section-cont-img {
+  width: 50%;
+  height: 40%;
+}
+
+.home__section-cont-text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  gap: 20px;
+}
+
+.home__section-cont-title {
+  font-size: 36px;
+  color: #fcb514;
+}
+
+.home__section-cont-subtitle {
+  font-size: 30px;
+}
+
+.home__section-cont-text-p {
+  font-size: 14px;
+}
+
+/* --- Scroll chevron --------------------------------------- */
+
+.scroll-chevron {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.scroll-chevron__icon {
+  width: 36px;
+  height: 36px;
+  opacity: 0.6;
+}
+
+.scroll-chevron--bounce .scroll-chevron__icon {
+  animation: chevron-bounce 2s ease forwards;
+}
+
+@keyframes chevron-bounce {
+  0% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  10% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+  20% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  35% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  65% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+}
+
+/* --- Customers carousel ----------------------------------- */
+
+.home__customers {
+  padding: 80px 0;
+  background-color: #000;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.home__customers-title {
+  text-align: center;
+  font-size: 36px;
+  color: #fcb514;
+  margin-bottom: 60px;
+  padding: 0 20px;
+}
+
+.home__customers-marquee {
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+/*
+  4 identical copies of the logo set are rendered.
+  The animation moves exactly -25% (one copy's width), so when it
+  resets to 0 the visual is pixel-identical — no visible jump.
+*/
+.home__customers-track {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  padding-right: 100px; /* matches gap so the last logo has equal spacing */
+  width: max-content;
+  will-change: transform;
+  animation: marquee-scroll 22s linear infinite;
+}
+
+.home__customers-logo {
+  height: 80px;
+  width: auto;
+  opacity: 0.75;
+  transition: opacity 0.3s ease;
+  flex-shrink: 0;
+}
+
+.home__customers-logo:hover {
+  opacity: 1;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+/* --- Cool stats ------------------------------------------- */
+
+.home__customers-stats {
+  margin-top: 70px;
+  text-align: center;
+}
+
+.home__customers-stats-title {
+  font-size: 36px;
+  color: #fcb514;
+  margin-bottom: 36px;
+}
+
+.home__customers-stats-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+}
+
+.home__customers-stats-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.home__customers-stats-number {
+  font-family: var(--font-h1);
+  font-size: 64px;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.home__customers-stats-label {
+  font-family: var(--font-base);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.65);
+  text-transform: uppercase;
+}
+
+.home__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-image: url("../../assets/images/backgrounds/home-cta-background.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+.home__cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #000000 0%, transparent 30%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.home__cta-cont {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  width: 26%;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.603);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/* ============================================================
+   RESPONSIVE — Tablet (≤ 1024px)
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .home__hero {
+    background-attachment: scroll;
+    background-position-x: 1px;
+  }
+
+  .hero__cta {
+    width: 65%;
+    padding: 40px 40px 40px 60px;
+  }
+
+  .home__section-cont {
+    width: 90%;
+  }
+
+  .home__cta-cont {
+    width: 40%;
+  }
+
+  .home__customers-stats-grid {
+    gap: 48px;
+  }
+
+  .home__customers-stats-number {
+    font-size: 52px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — Mobile (≤ 768px)
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* --- Hero ------------------------------------------------ */
+
+  .home__hero {
+    background-attachment: scroll;
+    background-position-x: 1px;
+  }
+
+  /* Paralax stays visible — scales naturally to 100vw */
+  .home__paralax {
+    display: block;
+  }
+
+  .hero__cta {
+    width: 82%;
+    border-radius: 0 10px 10px 0;
+    padding: 28px 24px 28px 28px;
+    bottom: 38%;
+  }
+
+  .hero__cta-h1 {
+    font-size: 26px;
+    line-height: 32px;
+    text-align: left;
+  }
+
+  /* --- Service sections ------------------------------------ */
+
+  .home__section {
+    height: auto;
+    min-height: 100svh;
+    padding: 80px 0 40px;
+  }
+
+  .home__section-cont {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .home__section-cont-img {
+    width: 80%;
+    height: auto;
+  }
+
+  .home__section-cont-text {
+    width: 85%;
+    padding: 24px 0;
+  }
+
+  .home__section-cont-text-h2 {
+    font-size: 28px;
+  }
+
+  .home__section-cont-text-h3 {
+    font-size: 22px;
+  }
+
+  .home__section-cont-text-p {
+    font-size: 14px;
+  }
+
+  /* --- Customers ------------------------------------------- */
+
+  .home__customers {
+    height: auto;
+    padding: 60px 0;
+  }
+
+  .home__customers-title {
+    font-size: 22px;
+    margin-bottom: 40px;
+    padding: 0 16px;
+  }
+
+  .home__customers-logo {
+    height: 50px;
+  }
+
+  .home__customers-track {
+    gap: 60px;
+    padding-right: 60px;
+  }
+
+  .home__customers-stats {
+    margin-top: 50px;
+    padding: 0 16px;
+  }
+
+  .home__customers-stats-title {
+    font-size: 22px;
+    margin-bottom: 28px;
+  }
+
+  .home__customers-stats-grid {
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .home__customers-stats-number {
+    font-size: 52px;
+  }
+
+  /* --- CTA ------------------------------------------------- */
+
+  .home__cta {
+    background-attachment: scroll;
+  }
+
+  .home__cta-cont {
+    width: 85%;
+  }
+
+  .home__cta-cont h1 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
