@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import Seo from "../components/Seo";
 import paralaxImg from "../assets/images/elements/paralax-hero.png";
 import webdevImg from "../assets/images/elements/web-development.png";
 import digmktImg from "../assets/images/elements/digital-marketing.png";
@@ -61,7 +62,13 @@ const customerLogos = [
 function Home() {
   const navigate = useNavigate();
   return (
-    <main className="home">
+    <>
+      <Seo
+        title="Deploy Studio | Websites, Marketing & Content That Grow Your Business"
+        description="Deploy Studio builds stunning websites, automates your marketing, and creates great content so your business can grow faster. Explore our web development, digital marketing, and content creation services."
+        path="/"
+      />
+      <main className="home">
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="home__hero">
         <img
@@ -258,7 +265,8 @@ function Home() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 }
 

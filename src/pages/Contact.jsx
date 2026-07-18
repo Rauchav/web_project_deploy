@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Seo from "../components/Seo";
 
 /* ── Data ───────────────────────────────────────────────────── */
 
@@ -176,6 +177,12 @@ function Contact() {
   /* ── Success screen ────────────────────────────────────────── */
   if (submitted) {
     return (
+      <>
+      <Seo
+        title="Thank You | Deploy Studio"
+        description="Thanks for requesting your free consultation with Deploy Studio. We're reviewing your answers and will follow up with a personalized growth strategy soon."
+        path="/contact"
+      />
       <main className="contact">
         <div className="contact__success">
           <div className="contact__success-icon">
@@ -204,12 +211,19 @@ function Contact() {
           </button>
         </div>
       </main>
+      </>
     );
   }
 
   /* ── Multi-step form ───────────────────────────────────────── */
   return (
-    <main className="contact">
+    <>
+      <Seo
+        title="Free Consultation | Get Your Custom Growth Strategy – Deploy Studio"
+        description="Get a free, personalized consultation from Deploy Studio. Tell us about your business and marketing goals — no sales call, no commitment."
+        path="/contact"
+      />
+      <main className="contact">
       <div className="contact__wrapper">
 
         <div className="contact__header">
@@ -410,7 +424,8 @@ function Contact() {
         </div>
 
       </div>
-    </main>
+      </main>
+    </>
   );
 }
 

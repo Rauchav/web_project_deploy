@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Seo from "../components/Seo";
 import paralaxImg from "../assets/images/elements/paralax-servicios.png";
 import webDevImg from "../assets/images/elements/web-development-button.png";
 import digMkt from "../assets/images/elements/digital-marketing-button.png";
@@ -17,7 +18,13 @@ const scrollToSection = (id) => {
 function Services() {
   const navigate = useNavigate();
   return (
-    <main className="services">
+    <>
+      <Seo
+        title="Our Services | Web Development, Digital Marketing & Content Creation – Deploy Studio"
+        description="Explore Deploy Studio's services: custom web development, data-driven digital marketing, and content creation designed to convert, retain, and grow your brand."
+        path="/services"
+      />
+      <main className="services">
       <section className="hero__services">
         <img
           className="services__paralax"
@@ -81,7 +88,8 @@ function Services() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 }
 
