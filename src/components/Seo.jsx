@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
-import defaultOgImage from "../assets/images/logos/whole-logo-white.png";
 import { SITE_NAME, SITE_URL } from "../config/seo";
+
+const defaultOgImage = "/og-image.png";
 
 function Seo({ title, description, path = "/", image = defaultOgImage }) {
   const url = `${SITE_URL}${path}`;

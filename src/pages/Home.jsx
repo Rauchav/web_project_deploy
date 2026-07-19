@@ -69,202 +69,204 @@ function Home() {
         path="/"
       />
       <main className="home">
-      {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="home__hero">
-        <img
-          className="home__paralax"
-          src={paralaxImg}
-          alt="deploy studio earth from space picture"
-        />
-        <div
-          className="hero__cta"
-          data-animate="scale-up"
-          data-animate-delay="150"
-        >
-          <h1 className="hero__cta-h1">
-            Your business deserves a
-            <span style={{ color: "#fcb514" }}> stunning website</span>,
-            <span style={{ color: "#fcb514" }}> automated marketing</span> and{" "}
-            <span style={{ color: "#fcb514" }}> great content</span>
-          </h1>
-          <div className="cta-buttons">
-            <button
-              className="cta-button-services"
-              onClick={() => navigate("/services")}
-            >
-              SERVICES
-            </button>
-            <button
-              className="cta-button-contactus"
-              onClick={() => navigate("/contact")}
-            >
-              LET'S TALK
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Service section 1 — Web Development ──────────────── */}
-      <section className="home__section">
-        <div className="home__section-cont">
-          <div className="home__section-cont-text" data-animate="from-bottom">
-            <h2 className="home__section-cont-title">WEB DEVELOPMENT</h2>
-            <h3 className="home__section-cont-subtitle">
-              TAKE YOUR BUSINESS TO A WHOLE NEW LEVEL OF SUCCESS
-            </h3>
-            <p className="home__section-cont-text-p">
-              Let your business operations run automatically while you focus on
-              making it grow. We design and develop customized web tools that
-              will automate your business operations and optimize your results.
-            </p>
-            <ScrollChevron />
-          </div>
+        {/* ── Hero ─────────────────────────────────────────────── */}
+        <section className="home__hero">
           <img
-            className="home__section-cont-img"
-            src={webdevImg}
-            data-animate="from-bottom"
-            data-animate-delay="150"
-          />
-        </div>
-      </section>
-
-      {/* ── Service section 2 — Digital Marketing ────────────── */}
-      <section className="home__section">
-        <div className="home__section-cont">
-          <img
-            className="home__section-cont-img"
-            src={digmktImg}
-            data-animate="from-bottom"
+            className="home__paralax"
+            src={paralaxImg}
+            alt="deploy studio earth from space picture"
           />
           <div
-            className="home__section-cont-text"
-            data-animate="from-bottom"
+            className="hero__cta"
+            data-animate="scale-up"
             data-animate-delay="150"
           >
-            <h2 className="home__section-cont-title">DIGITAL MARKETING</h2>
-            <h3 className="home__section-cont-subtitle">
-              APPLY DATA-DRIVEN STRATEGIES THAT INTERACT, CONVERT AND RETAIN
-            </h3>
-            <p className="home__section-cont-text-p">
-              Apply marketing strategies based on real market data and get a
-              clear view of ​​how your business grow. Know your market,
-              advertise effectively, filter your potencial leads, build a fast
-              and easy way for them to buy, love it and repeat.
-            </p>
-            <ScrollChevron />
-          </div>
-        </div>
-      </section>
-
-      {/* ── Service section 3 — Content Creation ─────────────── */}
-      <section className="home__section">
-        <div className="home__section-cont">
-          <div className="home__section-cont-text" data-animate="from-bottom">
-            <h2 className="home__section-cont-title">CONTENT CREATION</h2>
-            <h3 className="home__section-cont-subtitle">
-              "DISCOVER THE POTENTIAL OF A WELL-POSITIONED BRAND THAT KNOWS HOW
-              AND WHAT TO COMMUNICATE!"
-            </h3>
-            <p className="home__section-cont-text-p">
-              Your brand image, how it communicates, and what it says make the
-              difference. We create, promote, and position winning brands. We
-              develop your image and ensure that your communications and content
-              are eye-catching, relevant, and effective.
-            </p>
-            <ScrollChevron />
-          </div>
-          <img
-            className="home__section-cont-img"
-            src={contcreatImg}
-            data-animate="from-bottom"
-            data-animate-delay="150"
-          />
-        </div>
-      </section>
-
-      {/* ── Customers & stats ────────────────────────────────── */}
-      <section className="home__customers">
-        <h2 className="home__customers-title" data-animate="from-bottom">
-          CUSTOMERS WHO HAVE ALREADY TRUSTED US
-        </h2>
-        <div className="home__customers-marquee">
-          <div className="home__customers-track">
-            {[
-              ...customerLogos,
-              ...customerLogos,
-              ...customerLogos,
-              ...customerLogos,
-            ].map((logo, i) => (
-              <img
-                key={i}
-                src={logo.src}
-                alt={logo.alt}
-                className="home__customers-logo"
-              />
-            ))}
-          </div>
-        </div>
-        <div className="home__customers-stats">
-          <h2
-            className="home__customers-stats-title"
-            data-animate="from-bottom"
-          >
-            COOL STATS
-          </h2>
-          <div className="home__customers-stats-grid">
-            <div
-              className="home__customers-stats-item"
-              data-animate="from-bottom"
-            >
-              <CountUp to={20} prefix="+ " />
-              <span className="home__customers-stats-label">
-                HAPPY CUSTOMERS
-              </span>
+            <h1 className="hero__cta-h1">
+              Your business deserves a
+              <span style={{ color: "#fcb514" }}> stunning website</span>,
+              <span style={{ color: "#fcb514" }}> automated marketing</span> and{" "}
+              <span style={{ color: "#fcb514" }}> great content</span>
+            </h1>
+            <div className="cta-buttons">
+              <button
+                className="cta-button-services"
+                onClick={() => navigate("/services")}
+              >
+                SERVICES
+              </button>
+              <button
+                className="cta-button-contactus"
+                onClick={() => navigate("/contact")}
+              >
+                LET'S TALK
+              </button>
             </div>
+          </div>
+        </section>
+
+        {/* ── Service section 1 — Web Development ──────────────── */}
+        <section className="home__section">
+          <div className="home__section-cont">
+            <div className="home__section-cont-text" data-animate="from-bottom">
+              <h2 className="home__section-cont-title">WEB DEVELOPMENT</h2>
+              <h3 className="home__section-cont-subtitle">
+                TAKE YOUR BUSINESS TO A WHOLE NEW LEVEL OF SUCCESS
+              </h3>
+              <p className="home__section-cont-text-p">
+                Let your business operations run automatically while you focus
+                on making it grow. We design and develop customized web tools
+                that will automate your business operations and optimize your
+                results.
+              </p>
+              <ScrollChevron />
+            </div>
+            <img
+              className="home__section-cont-img"
+              src={webdevImg}
+              data-animate="from-bottom"
+              data-animate-delay="150"
+            />
+          </div>
+        </section>
+
+        {/* ── Service section 2 — Digital Marketing ────────────── */}
+        <section className="home__section">
+          <div className="home__section-cont">
+            <img
+              className="home__section-cont-img"
+              src={digmktImg}
+              data-animate="from-bottom"
+            />
             <div
-              className="home__customers-stats-item"
+              className="home__section-cont-text"
               data-animate="from-bottom"
               data-animate-delay="150"
             >
-              <CountUp to={100} prefix="+ " />
-              <span className="home__customers-stats-label">PROJECTS</span>
-            </div>
-            <div
-              className="home__customers-stats-item"
-              data-animate="from-bottom"
-              data-animate-delay="300"
-            >
-              <CountUp to={1000000} prefix="+ " />
-              <span className="home__customers-stats-label">
-                LEADS GENERATED
-              </span>
+              <h2 className="home__section-cont-title">DIGITAL MARKETING</h2>
+              <h3 className="home__section-cont-subtitle">
+                APPLY DATA-DRIVEN STRATEGIES THAT ACTUALLY CAPTURE, CONVERT AND
+                RETAIN
+              </h3>
+              <p className="home__section-cont-text-p">
+                Apply marketing strategies based on real market data and get a
+                clear view of ​​how your business grow. Know your market,
+                advertise effectively, filter your potencial leads, build a fast
+                and easy way for them to buy, love it and repeat.
+              </p>
+              <ScrollChevron />
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="home__cta">
-        <div className="home__cta-cont" data-animate="scale-up">
-          <h1 className="home__cta-cont-h1">
-            Ready to deploy your business to success?
-          </h1>
-          <div className="cta-buttons">
-            <button
-              className="cta-button-services"
-              onClick={() => navigate("/services")}
-            >
-              SERVICES
-            </button>
-            <button
-              className="cta-button-contactus"
-              onClick={() => navigate("/contact")}
-            >
-              LET'S TALK
-            </button>
+        {/* ── Service section 3 — Content Creation ─────────────── */}
+        <section className="home__section">
+          <div className="home__section-cont">
+            <div className="home__section-cont-text" data-animate="from-bottom">
+              <h2 className="home__section-cont-title">CONTENT CREATION</h2>
+              <h3 className="home__section-cont-subtitle">
+                "DISCOVER THE POTENTIAL OF A WELL-POSITIONED BRAND THAT KNOWS
+                HOW AND WHAT TO COMMUNICATE!"
+              </h3>
+              <p className="home__section-cont-text-p">
+                Your brand image, how it communicates, and what it says make the
+                difference. We create, promote, and position winning brands. We
+                develop your image and ensure that your communications and
+                content are eye-catching, relevant, and effective.
+              </p>
+              <ScrollChevron />
+            </div>
+            <img
+              className="home__section-cont-img"
+              src={contcreatImg}
+              data-animate="from-bottom"
+              data-animate-delay="150"
+            />
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* ── Customers & stats ────────────────────────────────── */}
+        <section className="home__customers">
+          <h2 className="home__customers-title" data-animate="from-bottom">
+            CUSTOMERS WHO HAVE ALREADY TRUSTED US
+          </h2>
+          <div className="home__customers-marquee">
+            <div className="home__customers-track">
+              {[
+                ...customerLogos,
+                ...customerLogos,
+                ...customerLogos,
+                ...customerLogos,
+              ].map((logo, i) => (
+                <img
+                  key={i}
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="home__customers-logo"
+                />
+              ))}
+            </div>
+          </div>
+          <div className="home__customers-stats">
+            <h2
+              className="home__customers-stats-title"
+              data-animate="from-bottom"
+            >
+              COOL STATS
+            </h2>
+            <div className="home__customers-stats-grid">
+              <div
+                className="home__customers-stats-item"
+                data-animate="from-bottom"
+              >
+                <CountUp to={20} prefix="+ " />
+                <span className="home__customers-stats-label">
+                  HAPPY CUSTOMERS
+                </span>
+              </div>
+              <div
+                className="home__customers-stats-item"
+                data-animate="from-bottom"
+                data-animate-delay="150"
+              >
+                <CountUp to={100} prefix="+ " />
+                <span className="home__customers-stats-label">PROJECTS</span>
+              </div>
+              <div
+                className="home__customers-stats-item"
+                data-animate="from-bottom"
+                data-animate-delay="300"
+              >
+                <CountUp to={1000000} prefix="+ " />
+                <span className="home__customers-stats-label">
+                  LEADS GENERATED
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── CTA ──────────────────────────────────────────────── */}
+        <section className="home__cta">
+          <div className="home__cta-cont" data-animate="scale-up">
+            <h1 className="home__cta-cont-h1">
+              Ready to deploy your business to success?
+            </h1>
+            <div className="cta-buttons">
+              <button
+                className="cta-button-services"
+                onClick={() => navigate("/services")}
+              >
+                SERVICES
+              </button>
+              <button
+                className="cta-button-contactus"
+                onClick={() => navigate("/contact")}
+              >
+                LET'S TALK
+              </button>
+            </div>
+          </div>
+        </section>
       </main>
     </>
   );
