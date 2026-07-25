@@ -256,7 +256,7 @@ function Contact() {
       <main className="contact">
         <div className="contact__wrapper">
           <div className="contact__header">
-            <h1 className="contact__title">Free Consultation</h1>
+            <h1 className="contact__title">Build a custom GTM Strategy</h1>
             <p className="contact__subtitle">
               {" "}
               In order to provide you with a useful personalized GTM (Go to
