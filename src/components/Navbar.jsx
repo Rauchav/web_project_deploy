@@ -98,7 +98,7 @@ function Navbar() {
                 }
                 onClick={closeMenu}
               >
-                Free Consultation
+                Build your strategy
               </NavLink>
             </li>
           </ul>
