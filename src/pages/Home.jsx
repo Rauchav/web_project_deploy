@@ -98,7 +98,7 @@ function Home() {
                 className="cta-button-contactus"
                 onClick={() => navigate("/contact")}
               >
-                LET'S TALK
+                GET STARTED
               </button>
             </div>
           </div>
@@ -251,6 +251,9 @@ function Home() {
             <h1 className="home__cta-cont-h1">
               Ready to deploy your business to success?
             </h1>
+            <p className="home__cta-offer">
+              Get a free custom GTM strategy for your business
+            </p>
             <div className="cta-buttons">
               <button
                 className="cta-button-services"
@@ -262,7 +265,7 @@ function Home() {
                 className="cta-button-contactus"
                 onClick={() => navigate("/contact")}
               >
-                LET'S TALK
+                GET STARTED
               </button>
             </div>
           </div>

@@ -98,7 +98,7 @@ function Navbar() {
                 }
                 onClick={closeMenu}
               >
-                Build your strategy
+                Get Started
               </NavLink>
             </li>
           </ul>
@@ -160,7 +160,7 @@ function Navbar() {
               }
               onClick={closeMenu}
             >
-              Contact Us
+              Get Started
             </NavLink>
           </li>
         </ul>

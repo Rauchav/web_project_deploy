@@ -158,6 +158,10 @@
   border-radius: 10px;
 }
 
+.services__cta-offer {
+  font-weight: bold;
+}
+
 /* Panel fade-in + subtle rise animation on mount */
 .services__section-cont--enter {
   animation: panel-enter 0.7s ease both;

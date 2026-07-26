@@ -25,69 +25,77 @@ function Services() {
         path="/services"
       />
       <main className="services">
-      <section className="hero__services">
-        <img
-          className="services__paralax"
-          src={paralaxImg}
-          alt="deploy studio earth from space picture"
+        <section className="hero__services">
+          <img
+            className="services__paralax"
+            src={paralaxImg}
+            alt="deploy studio earth from space picture"
+          />
+          <div className="hero__services-buttons">
+            <div
+              className="hero__services-button"
+              onClick={() => scrollToSection("web-development")}
+              data-animate="from-bottom"
+              data-animate-delay="100"
+            >
+              <h1 className="hero__services-button-title">web development</h1>
+              <img className="hero__services-button-img" src={webDevImg} />
+            </div>
+            <div
+              className="hero__services-button"
+              onClick={() => scrollToSection("digital-marketing")}
+              data-animate="from-bottom"
+              data-animate-delay="220"
+            >
+              <h1 className="hero__services-button-title">digital marketing</h1>
+              <img className="hero__services-button-img" src={digMkt} />
+            </div>
+            <div
+              className="hero__services-button"
+              onClick={() => scrollToSection("content-creation")}
+              data-animate="from-bottom"
+              data-animate-delay="340"
+            >
+              <h1 className="hero__services-button-title">content creation</h1>
+              <img className="hero__services-button-img" src={contCreat} />
+            </div>
+          </div>
+        </section>
+
+        <ServiceSection
+          id="web-development"
+          title="WEB DEVELOPMENT"
+          tabs={webDevelopmentTabs}
         />
-        <div className="hero__services-buttons">
-          <div
-            className="hero__services-button"
-            onClick={() => scrollToSection("web-development")}
-            data-animate="from-bottom"
-            data-animate-delay="100"
-          >
-            <h1 className="hero__services-button-title">web development</h1>
-            <img className="hero__services-button-img" src={webDevImg} />
-          </div>
-          <div
-            className="hero__services-button"
-            onClick={() => scrollToSection("digital-marketing")}
-            data-animate="from-bottom"
-            data-animate-delay="220"
-          >
-            <h1 className="hero__services-button-title">digital marketing</h1>
-            <img className="hero__services-button-img" src={digMkt} />
-          </div>
-          <div
-            className="hero__services-button"
-            onClick={() => scrollToSection("content-creation")}
-            data-animate="from-bottom"
-            data-animate-delay="340"
-          >
-            <h1 className="hero__services-button-title">content creation</h1>
-            <img className="hero__services-button-img" src={contCreat} />
-          </div>
-        </div>
-      </section>
+        <ServiceSection
+          id="digital-marketing"
+          title="DIGITAL MARKETING"
+          tabs={digitalMarketingTabs}
+        />
+        <ServiceSection
+          id="content-creation"
+          title="CONTENT CREATION"
+          tabs={contentCreationTabs}
+        />
 
-      <ServiceSection
-        id="web-development"
-        title="WEB DEVELOPMENT"
-        tabs={webDevelopmentTabs}
-      />
-      <ServiceSection
-        id="digital-marketing"
-        title="DIGITAL MARKETING"
-        tabs={digitalMarketingTabs}
-      />
-      <ServiceSection
-        id="content-creation"
-        title="CONTENT CREATION"
-        tabs={contentCreationTabs}
-      />
-
-      <section className="services__cta">
-        <div className="services__cta-cont" data-animate="scale-up">
-          <h1 className="services__cta-cont-h1">
-            success awaits for those who try
-          </h1>
-          <div className="cta-buttons">
-            <button className="cta-button-contactus" onClick={() => navigate("/contact")}>LET'S TALK</button>
+        <section className="services__cta">
+          <div className="services__cta-cont" data-animate="scale-up">
+            <h1 className="services__cta-cont-h1">
+              success awaits for those who try.
+            </h1>
+            <p className="services__cta-offer">
+              Get a free custom GTM strategy for your business
+            </p>
+            <div className="cta-buttons">
+              <button
+                className="cta-button-contactus"
+                onClick={() => navigate("/contact")}
+              >
+                GET STARTED
+              </button>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
       </main>
     </>
   );

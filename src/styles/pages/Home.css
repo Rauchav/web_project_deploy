@@ -64,6 +64,10 @@
   margin-bottom: 20px;
 }
 
+.home__cta-offer {
+  font-weight: bold;
+}
+
 .cta-buttons {
   display: flex;
   flex-direction: row;

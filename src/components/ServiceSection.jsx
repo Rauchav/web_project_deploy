@@ -9,9 +9,15 @@ function ServiceSection({ id, title, tabs }) {
   return (
     <section id={id} className="services__section">
       <div className="services__section-header">
-        <h2 className="service__section-cont-title" data-animate="from-bottom">{title}</h2>
+        <h2 className="service__section-cont-title" data-animate="from-bottom">
+          {title}
+        </h2>
 
-        <div className="cta-buttons services__section-tabs" data-animate="from-bottom" data-animate-delay="150">
+        <div
+          className="cta-buttons services__section-tabs"
+          data-animate="from-bottom"
+          data-animate-delay="150"
+        >
           {tabs.map((tab, i) => (
             <button
               key={tab.label}
@@ -33,9 +39,16 @@ function ServiceSection({ id, title, tabs }) {
           className="services__section-cont services__section-cont--enter"
         >
           <div className="serivce__section-cont-text">
-            <h3 className="service__section-cont-subtitle">{active.subtitle}</h3>
+            <h3 className="service__section-cont-subtitle">
+              {active.subtitle}
+            </h3>
             <p className="service__section-cont-text-p">{active.description}</p>
-            <button className="cta-button-contactus" onClick={() => navigate("/contact")}>LET'S TALK</button>
+            <button
+              className="cta-button-contactus"
+              onClick={() => navigate("/contact")}
+            >
+              GET STARTED
+            </button>
           </div>
           <div className="service__section-cont-img-cont">
             <img

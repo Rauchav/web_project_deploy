@@ -35,7 +35,7 @@ function Footer() {
                 isActive ? "footer__link footer__link--active" : "footer__link"
               }
             >
-              Free Consultation
+              Get Started
             </NavLink>
           </li>
         </ul>
