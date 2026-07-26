@@ -98,7 +98,12 @@ function Navbar() {
                 }
                 onClick={closeMenu}
               >
-                Get Started
+                <button
+                  className="cta-button-contactus"
+                  onClick={() => navigate("/contact")}
+                >
+                  GET STARTED
+                </button>
               </NavLink>
             </li>
           </ul>
@@ -160,7 +165,12 @@ function Navbar() {
               }
               onClick={closeMenu}
             >
-              Get Started
+              <button
+                className="cta-button-contactus"
+                onClick={() => navigate("/contact")}
+              >
+                GET STARTED
+              </button>
             </NavLink>
           </li>
         </ul>

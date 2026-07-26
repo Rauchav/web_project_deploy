@@ -88,7 +88,7 @@ function Footer() {
                 href="mailto:deploytherocket@gmail.com"
                 className="footer__contact-value"
               >
-                deploytherocket@gmail.com
+                contact@deploystudio.net
               </a>
             </div>
           </div>
