@@ -252,7 +252,7 @@ function Home() {
               Ready to deploy your business to success?
             </h1>
             <p className="home__cta-offer">
-              Get a free custom GTM strategy for your business
+              Ignite your growth, start with a FREE custom GTM strategy
             </p>
             <div className="cta-buttons">
               <button

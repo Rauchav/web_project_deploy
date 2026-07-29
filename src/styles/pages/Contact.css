@@ -98,7 +98,7 @@
 .contact__progress-circle--active {
   border-color: #fcb514;
   color: #fcb514;
-  background: rgba(252, 181, 20, 0.08);
+  background: #000;
 }
 
 .contact__progress-circle--done {
@@ -234,6 +234,213 @@
   line-height: 1.65;
 }
 
+/* ── Phone input (country code + number) ─────────────────── */
+
+.contact__phone {
+  position: relative;
+  display: flex;
+  gap: 8px;
+}
+
+.contact__phone-code {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  padding: 0 12px;
+  color: white;
+  font-family: var(--font-base);
+  font-size: 14px;
+  font-weight: 300;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.contact__phone-code:hover {
+  border-color: rgba(255, 255, 255, 0.38);
+}
+
+.contact__phone-flag {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.contact__phone-number {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact__phone-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 280px;
+  max-width: 90vw;
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  overflow: hidden;
+}
+
+.contact__phone-search {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 10px 14px;
+  color: white;
+  font-family: var(--font-base);
+  font-size: 13px;
+  outline: none;
+}
+
+.contact__phone-list {
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.contact__phone-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 9px 14px;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: var(--font-base);
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.contact__phone-option:hover {
+  background: rgba(252, 181, 20, 0.1);
+}
+
+.contact__phone-option-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contact__phone-option-dial {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+}
+
+.contact__phone-empty {
+  padding: 14px;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* ── Location autocomplete ────────────────────────────────── */
+
+.contact__combobox {
+  position: relative;
+}
+
+.contact__combobox-list {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  overflow: hidden;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.contact__combobox-option {
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 10px 14px;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: var(--font-base);
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.contact__combobox-option:hover {
+  background: rgba(252, 181, 20, 0.1);
+  color: #fcb514;
+}
+
+/* ── Market multi-select (chips) ──────────────────────────── */
+
+.contact__multiselect {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.contact__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(252, 181, 20, 0.12);
+  border: 1px solid #fcb514;
+  border-radius: 20px;
+  padding: 6px 8px 6px 16px;
+  font-family: var(--font-base);
+  font-size: 13px;
+  font-weight: 600;
+  color: #fcb514;
+}
+
+.contact__chip .contact__chip-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  color: #fcb514;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.contact__chip .contact__chip-remove:hover {
+  background: rgba(252, 181, 20, 0.25);
+}
+
+/* ── "Other" free-text reveal (tools) ─────────────────────── */
+
+.contact__other-input {
+  margin-top: 10px;
+}
+
 /* ── Lead channel pills ───────────────────────────────────── */
 
 .contact__pills {
@@ -260,11 +467,17 @@
   color: white;
 }
 
-.contact__pill--active {
+/* Doubled class selector beats the global [type="button"] reset in main.css,
+   which is imported later in the cascade and ties on specificity otherwise. */
+.contact__pill.contact__pill--active {
   background: rgba(252, 181, 20, 0.12);
   border-color: #fcb514;
   color: #fcb514;
   font-weight: 600;
+}
+
+.contact__pill.contact__pill--active:hover {
+  color: #fcb514;
 }
 
 /* ── Budget cards ─────────────────────────────────────────── */

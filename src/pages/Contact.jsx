@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Seo from "../components/Seo";
+import PhoneInput from "../components/contact/PhoneInput";
+import LocationAutocomplete from "../components/contact/LocationAutocomplete";
+import MarketSelect from "../components/contact/MarketSelect";
+import { TOOLS } from "../data/tools";
 
 /* ── Data ───────────────────────────────────────────────────── */
 
@@ -41,10 +45,10 @@ const INITIAL_DATA = {
   location: "",
   core_offer: "",
   target_customers: "",
-  market_location: "",
+  market_location: [],
   lead_channels: [],
   sales_process: "",
-  current_tools: "",
+  current_tools: [],
   expansion_vision: "",
   budget_range: "",
   expected_results: "",
@@ -133,9 +137,13 @@ function Contact() {
   const [error, setError] = useState(null);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [otherTool, setOtherTool] = useState("");
 
   const field = (key) => (e) =>
     setData((prev) => ({ ...prev, [key]: e.target.value }));
+
+  const setField = (key) => (val) =>
+    setData((prev) => ({ ...prev, [key]: val }));
 
   const toggleChannel = (ch) =>
     setData((prev) => ({
@@ -143,6 +151,14 @@ function Contact() {
       lead_channels: prev.lead_channels.includes(ch)
         ? prev.lead_channels.filter((c) => c !== ch)
         : [...prev.lead_channels, ch],
+    }));
+
+  const toggleTool = (tool) =>
+    setData((prev) => ({
+      ...prev,
+      current_tools: prev.current_tools.includes(tool)
+        ? prev.current_tools.filter((t) => t !== tool)
+        : [...prev.current_tools, tool],
     }));
 
   const setBudget = (val) =>
@@ -176,18 +192,27 @@ function Contact() {
     try {
       const webhookUrl = import.meta.env.VITE_N8N_WEBHOOK_URL;
       if (webhookUrl) {
+        const tools = [
+          ...data.current_tools.filter((t) => t !== "Other"),
+          ...(data.current_tools.includes("Other") && otherTool.trim()
+            ? [otherTool.trim()]
+            : []),
+        ];
         const res = await fetch(webhookUrl, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             ...data,
             lead_channels: data.lead_channels.join(", "),
+            market_location: data.market_location.join(", "),
+            current_tools: tools.join(", "),
             submitted_at: new Date().toISOString(),
           }),
         });
         if (!res.ok) throw new Error("Webhook responded with an error.");
       }
       setSubmitted(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } catch {
       setError(
         "Something went wrong sending your information. Please try again.",
@@ -320,25 +345,17 @@ function Contact() {
                     <label className="contact__label">
                       Phone <span className="contact__opt">(optional)</span>
                     </label>
-                    <input
-                      className="contact__input"
-                      type="tel"
-                      placeholder="+1 555 000 0000"
-                      value={data.phone}
-                      onChange={field("phone")}
-                    />
+                    <PhoneInput onChange={setField("phone")} />
                   </div>
                 </div>
                 <div className="contact__field">
                   <label className="contact__label">
                     Where is your company based?
                   </label>
-                  <input
-                    className="contact__input"
-                    type="text"
-                    placeholder="e.g. Miami, USA"
+                  <LocationAutocomplete
                     value={data.location}
-                    onChange={field("location")}
+                    onChange={setField("location")}
+                    placeholder="e.g. Miami, United States"
                   />
                 </div>
               </div>
@@ -378,14 +395,15 @@ function Contact() {
                 </div>
                 <div className="contact__field">
                   <label className="contact__label">
-                    Where is your primary market?
+                    Where is your primary market?{" "}
+                    <span className="contact__opt">
+                      Add every region, country, or city that applies
+                    </span>
                   </label>
-                  <input
-                    className="contact__input"
-                    type="text"
-                    placeholder="e.g. National (USA), Latin America, or Global"
+                  <MarketSelect
                     value={data.market_location}
-                    onChange={field("market_location")}
+                    onChange={setField("market_location")}
+                    placeholder="e.g. Europe, North America, or Miami, United States"
                   />
                 </div>
               </div>
@@ -430,15 +448,30 @@ function Contact() {
                 </div>
                 <div className="contact__field">
                   <label className="contact__label">
-                    What tools or software do you currently use?
+                    What tools or software do you currently use?{" "}
+                    <span className="contact__opt">Select all that apply</span>
                   </label>
-                  <input
-                    className="contact__input"
-                    type="text"
-                    placeholder="e.g. HubSpot CRM, Mailchimp, Shopify, QuickBooks — or None"
-                    value={data.current_tools}
-                    onChange={field("current_tools")}
-                  />
+                  <div className="contact__pills">
+                    {TOOLS.map((tool) => (
+                      <button
+                        key={tool}
+                        type="button"
+                        className={`contact__pill${data.current_tools.includes(tool) ? " contact__pill--active" : ""}`}
+                        onClick={() => toggleTool(tool)}
+                      >
+                        {tool}
+                      </button>
+                    ))}
+                  </div>
+                  {data.current_tools.includes("Other") && (
+                    <input
+                      className="contact__input contact__other-input"
+                      type="text"
+                      placeholder="Tell us which tool(s)..."
+                      value={otherTool}
+                      onChange={(e) => setOtherTool(e.target.value)}
+                    />
+                  )}
                 </div>
               </div>
             )}
