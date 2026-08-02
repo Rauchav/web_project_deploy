@@ -195,7 +195,37 @@ function Contact() {
     setSubmitting(true);
     try {
       const webhookUrl = import.meta.env.VITE_N8N_WEBHOOK_URL;
-      if (webhookUrl) {
+      if (!webhookUrl && !import.meta.env.DEV) {
+        throw new Error(
+          "VITE_N8N_WEBHOOK_URL is not configured. Set it in the environment before deploying.",
+        );
+      }
+      if (import.meta.env.DEV) {
+        if (webhookUrl) {
+          const tools = [
+            ...data.current_tools.filter((t) => t !== "Other"),
+            ...(data.current_tools.includes("Other") && otherTool.trim()
+              ? [otherTool.trim()]
+              : []),
+          ];
+          const res = await fetch(webhookUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              ...data,
+              lead_channels: data.lead_channels.join(", "),
+              market_location: data.market_location.join(", "),
+              current_tools: tools.join(", "),
+              submitted_at: new Date().toISOString(),
+            }),
+          });
+          if (!res.ok) throw new Error("Webhook responded with an error.");
+        } else {
+          console.warn(
+            "VITE_N8N_WEBHOOK_URL is not set; skipping webhook request in development.",
+          );
+        }
+      } else {
         const tools = [
           ...data.current_tools.filter((t) => t !== "Other"),
           ...(data.current_tools.includes("Other") && otherTool.trim()
@@ -217,7 +247,8 @@ function Contact() {
       }
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
-    } catch {
+    } catch (err) {
+      console.error(err);
       setError(
         "Something went wrong sending your information. Please try again.",
       );
