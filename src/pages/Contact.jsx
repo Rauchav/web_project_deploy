@@ -286,7 +286,7 @@ function Contact() {
         <div className="contact__wrapper">
           <div className="contact__header">
             <h1 className="contact__title">
-              Get a free custom strategy and take off
+              Take off with a free custom strategy
             </h1>
             <p className="contact__subtitle">
               {" "}
