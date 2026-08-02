@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../assets/images/logos/whole-logo-white.png";
 
 function Navbar() {
@@ -7,6 +7,7 @@ function Navbar() {
   const [hidden, setHidden] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const lastY = useRef(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => {
