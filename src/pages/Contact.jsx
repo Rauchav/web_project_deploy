@@ -290,11 +290,11 @@ function Contact() {
             </h1>
             <p className="contact__subtitle">
               {" "}
-              In order to provide you with a useful personalized Marketing
-              Strategy, we need to have a clear understanding of your business
-              and your market. Please fill out this brief form, and within
-              minutes, you will receive the results of your free consultation at
-              your email address.
+              In order to provide you with a useful personalized Automated
+              Marketing Strategy, we need to have a clear understanding of your
+              business and your market. Please fill out this brief form, and
+              within minutes, you will receive the results of your free
+              consultation at your email address.
             </p>
           </div>
 
