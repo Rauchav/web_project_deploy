@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Seo from "../components/Seo";
 import PhoneInput from "../components/contact/PhoneInput";
@@ -138,6 +138,10 @@ function Contact() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [otherTool, setOtherTool] = useState("");
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [step]);
 
   const field = (key) => (e) =>
     setData((prev) => ({ ...prev, [key]: e.target.value }));
