@@ -285,14 +285,16 @@ function Contact() {
       <main className="contact">
         <div className="contact__wrapper">
           <div className="contact__header">
-            <h1 className="contact__title">Build a free custom GTM Strategy</h1>
+            <h1 className="contact__title">
+              Get a free custom strategy and take off
+            </h1>
             <p className="contact__subtitle">
               {" "}
-              In order to provide you with a useful personalized GTM (Go to
-              market) strategy, we need to have a clear understanding of your
-              business and your market. Please fill out this brief form, and
-              within minutes, you will receive the results of your free
-              consultation at your email address.
+              In order to provide you with a useful personalized Marketing
+              Strategy, we need to have a clear understanding of your business
+              and your market. Please fill out this brief form, and within
+              minutes, you will receive the results of your free consultation at
+              your email address.
             </p>
           </div>
 
