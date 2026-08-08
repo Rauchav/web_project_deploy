@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Mailcheck from "mailcheck";
 import Seo from "../components/Seo";
 import PhoneInput from "../components/contact/PhoneInput";
 import LocationAutocomplete from "../components/contact/LocationAutocomplete";
@@ -138,6 +139,7 @@ function Contact() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [otherTool, setOtherTool] = useState("");
+  const [emailSuggestion, setEmailSuggestion] = useState(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -148,6 +150,19 @@ function Contact() {
 
   const setField = (key) => (val) =>
     setData((prev) => ({ ...prev, [key]: val }));
+
+  const handleEmailBlur = () => {
+    Mailcheck.run({
+      email: data.email,
+      suggested: (suggestion) => setEmailSuggestion(suggestion.full),
+      empty: () => setEmailSuggestion(null),
+    });
+  };
+
+  const acceptEmailSuggestion = () => {
+    setData((prev) => ({ ...prev, email: emailSuggestion }));
+    setEmailSuggestion(null);
+  };
 
   const toggleChannel = (ch) =>
     setData((prev) => ({
@@ -375,8 +390,25 @@ function Contact() {
                       type="email"
                       placeholder="jane@acmecorp.com"
                       value={data.email}
-                      onChange={field("email")}
+                      onChange={(e) => {
+                        field("email")(e);
+                        setEmailSuggestion(null);
+                      }}
+                      onBlur={handleEmailBlur}
                     />
+                    {emailSuggestion && (
+                      <p className="contact__email-hint">
+                        Did you mean{" "}
+                        <button
+                          type="button"
+                          className="contact__email-hint-link"
+                          onClick={acceptEmailSuggestion}
+                        >
+                          {emailSuggestion}
+                        </button>
+                        ?
+                      </p>
+                    )}
                   </div>
                   <div className="contact__field">
                     <label className="contact__label">
