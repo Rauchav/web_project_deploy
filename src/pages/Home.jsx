@@ -88,7 +88,8 @@ function Home() {
               <span style={{ color: "#fcb514" }}> great content</span>
             </h1>
             <p className="hero__cta-sub">
-              Trusted by growing brands across Europe and North America.
+              Let our experts apply the same marketing best practices the big
+              players use — built for your business.
             </p>
             <div className="cta-buttons">
               <button

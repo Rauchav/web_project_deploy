@@ -24,18 +24,18 @@
   z-index: 3;
 }
 
+/* Present in the HTML for SEO/AEO (states what the page covers), but not
+   shown — the three buttons below already name the same three services. */
 .hero__services-title {
-  position: relative;
-  z-index: 4;
-  color: white;
-  text-align: center;
-  font-size: 28px;
-  line-height: 1.3;
-  max-width: 700px;
-  background-color: rgba(0, 0, 0, 0.603);
-  padding: 16px 28px;
-  border-radius: 10px;
-  margin: 0 0 30px;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .hero__services-buttons {
@@ -66,7 +66,7 @@
 }
 
 .hero__services-button-title {
-  font-size: 20px;
+  font-size: 17px;
   text-align: center;
 }
 
@@ -218,6 +218,12 @@
   border-radius: 10px;
 }
 
+.services__cta-cont-h1 {
+  font-family: var(--font-h1);
+  font-size: 32px;
+  line-height: 1.2;
+}
+
 .services__cta-offer {
   font-size: 14px;
 }
@@ -319,12 +325,6 @@
   .hero__services {
     background-attachment: scroll;
     background-position: right center;
-  }
-
-  .hero__services-title {
-    font-size: 20px;
-    padding: 12px 18px;
-    max-width: 90%;
   }
 
   .hero__services-buttons {
