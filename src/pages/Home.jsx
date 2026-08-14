@@ -89,7 +89,7 @@ function Home() {
             </h1>
             <p className="hero__cta-sub">
               We'll apply to your business, the same marketing & sales best
-              practices the big players use. That same recipe for succes.
+              practices the big players use. That same recipe for success.
             </p>
             <div className="cta-buttons">
               <button
