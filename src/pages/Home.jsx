@@ -88,8 +88,9 @@ function Home() {
               <span style={{ color: "#fcb514" }}> great content</span>
             </h1>
             <p className="hero__cta-sub">
-              We'll apply to your business, the same marketing & sales best
-              practices the big players use. That same recipe for success.
+              We apply to your business, the same automated marketing & sales
+              best practices the big players use. Their same recipe for real
+              growth.
             </p>
             <div className="cta-buttons">
               <button

@@ -168,4 +168,10 @@
   .navbar__mobile-link--active {
     color: #fcb514;
   }
+
+  /* GET STARTED button reads small next to the 1.4rem nav links — bump ~25% */
+  .navbar__mobile-list .cta-button-contactus {
+    font-size: 1.75rem;
+    padding: 8px 38px;
+  }
 }
