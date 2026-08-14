@@ -25,17 +25,17 @@ const faqs = [
   {
     question: "Does Deploy Studio work with businesses outside the US?",
     answer:
-      "Yes — Deploy Studio works with clients across both Europe and North America.",
+      "Yes, Deploy Studio works with clients across Europe, North America and Latin America.",
   },
   {
     question: "What's included in a free consultation?",
     answer:
-      'A free custom "Go to Market" strategy based on your business, audience, and current marketing channels — no sales call, no commitment.',
+      'A free custom "Go to Market" strategy based on your business, audience, and current marketing channels. No sales call, no commitment, just experts advice that you can later on turn into actions.',
   },
   {
     question: "Can Deploy Studio handle both my website and my marketing?",
     answer:
-      "Yes — web development, digital marketing, and content creation run under one team, so your site, ads, and brand content stay consistent.",
+      "Yes, web development, digital marketing, and content creation run under one team, so your site, ads, and brand content stay consistent.",
   },
 ];
 
@@ -57,7 +57,7 @@ function Services() {
             alt="Deploy Studio services — web development, digital marketing and content creation"
           />
           <h1 className="hero__services-title" data-animate="from-bottom">
-            Web Development, Digital Marketing &amp; Content Creation Services
+            Web Development, Digital Marketing, Content Creation Services
           </h1>
           <div className="hero__services-buttons">
             <div
@@ -66,7 +66,7 @@ function Services() {
               data-animate="from-bottom"
               data-animate-delay="100"
             >
-              <p className="hero__services-button-title">web development</p>
+              <p className="hero__services-button-title">Web Development</p>
               <img className="hero__services-button-img" src={webDevImg} />
             </div>
             <div
@@ -75,7 +75,7 @@ function Services() {
               data-animate="from-bottom"
               data-animate-delay="220"
             >
-              <p className="hero__services-button-title">digital marketing</p>
+              <p className="hero__services-button-title">Digital Marketing</p>
               <img className="hero__services-button-img" src={digMkt} />
             </div>
             <div
@@ -84,7 +84,7 @@ function Services() {
               data-animate="from-bottom"
               data-animate-delay="340"
             >
-              <p className="hero__services-button-title">content creation</p>
+              <p className="hero__services-button-title">Content Creation</p>
               <img className="hero__services-button-img" src={contCreat} />
             </div>
           </div>
@@ -125,10 +125,10 @@ function Services() {
         <section className="services__cta">
           <div className="services__cta-cont" data-animate="scale-up">
             <h2 className="services__cta-cont-h1">
-              success awaits for those who try.
+              success awaits for those who try
             </h2>
             <p className="services__cta-offer">
-              Ignite your growth, start with a FREE custom GTM strategy
+              Ignite your business growth with a FREE custom GTM strategy
             </p>
             <div className="cta-buttons">
               <button

@@ -88,8 +88,8 @@ function Home() {
               <span style={{ color: "#fcb514" }}> great content</span>
             </h1>
             <p className="hero__cta-sub">
-              Let our experts apply the same marketing best practices the big
-              players use — built for your business.
+              We'll apply to your business, the same marketing & sales best
+              practices the big players use. That same recipe for succes.
             </p>
             <div className="cta-buttons">
               <button
@@ -257,7 +257,7 @@ function Home() {
               Ready to deploy your business to success?
             </h2>
             <p className="home__cta-offer">
-              Ignite your business growth with a FREE custom GTM strategy
+              Ignite your growth with a FREE custom GTM strategy
             </p>
             <div className="cta-buttons">
               <button
