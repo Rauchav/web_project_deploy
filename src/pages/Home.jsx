@@ -65,7 +65,7 @@ function Home() {
     <>
       <Seo
         title="Deploy Studio | Websites, Marketing & Content Growth"
-        description="Deploy Studio builds stunning websites, automates your marketing, and creates content that helps your business grow faster and convert more customers."
+        description="Deploy Studio is a web development, digital marketing, and content creation studio for growing businesses in Europe and North America."
         path="/"
       />
       <main className="home">
@@ -74,7 +74,7 @@ function Home() {
           <img
             className="home__paralax"
             src={paralaxImg}
-            alt="deploy studio earth from space picture"
+            alt="Deploy Studio — websites, marketing and content growth"
           />
           <div
             className="hero__cta"
@@ -87,6 +87,9 @@ function Home() {
               <span style={{ color: "#fcb514" }}> automated marketing</span> and{" "}
               <span style={{ color: "#fcb514" }}> great content</span>
             </h1>
+            <p className="hero__cta-sub">
+              Trusted by growing brands across Europe and North America.
+            </p>
             <div className="cta-buttons">
               <button
                 className="cta-button-services"
@@ -110,7 +113,7 @@ function Home() {
             <div className="home__section-cont-text" data-animate="from-bottom">
               <h2 className="home__section-cont-title">WEB DEVELOPMENT</h2>
               <h3 className="home__section-cont-subtitle">
-                TAKE YOUR BUSINESS TO A WHOLE NEW LEVEL OF SUCCESS
+                CUSTOM WEB DEVELOPMENT THAT AUTOMATES YOUR BUSINESS
               </h3>
               <p className="home__section-cont-text-p">
                 Let your business operations run automatically while you focus
@@ -144,13 +147,13 @@ function Home() {
             >
               <h2 className="home__section-cont-title">DIGITAL MARKETING</h2>
               <h3 className="home__section-cont-subtitle">
-                APPLY DATA-DRIVEN STRATEGIES THAT ACTUALLY CAPTURE, CONVERT AND
-                RETAIN
+                DATA-DRIVEN DIGITAL MARKETING THAT CAPTURES, CONVERTS AND
+                RETAINS
               </h3>
               <p className="home__section-cont-text-p">
                 Apply marketing strategies based on real market data and get a
-                clear view of ​​how your business grow. Know your market,
-                advertise effectively, filter your potencial leads, build a fast
+                clear view of how your business grows. Know your market,
+                advertise effectively, filter your potential leads, build a fast
                 and easy way for them to buy, love it and repeat.
               </p>
               <ScrollChevron />
@@ -164,8 +167,7 @@ function Home() {
             <div className="home__section-cont-text" data-animate="from-bottom">
               <h2 className="home__section-cont-title">CONTENT CREATION</h2>
               <h3 className="home__section-cont-subtitle">
-                "DISCOVER THE POTENTIAL OF A WELL-POSITIONED BRAND THAT KNOWS
-                HOW AND WHAT TO COMMUNICATE!"
+                CONTENT CREATION THAT BUILDS A BRAND PEOPLE REMEMBER
               </h3>
               <p className="home__section-cont-text-p">
                 Your brand image, how it communicates, and what it says make the
@@ -220,7 +222,7 @@ function Home() {
               >
                 <CountUp to={20} prefix="+ " />
                 <span className="home__customers-stats-label">
-                  HAPPY CUSTOMERS
+                  HAPPY CUSTOMERS — from film production to e-commerce
                 </span>
               </div>
               <div
@@ -229,7 +231,9 @@ function Home() {
                 data-animate-delay="150"
               >
                 <CountUp to={100} prefix="+ " />
-                <span className="home__customers-stats-label">PROJECTS</span>
+                <span className="home__customers-stats-label">
+                  PROJECTS across web, marketing, and content
+                </span>
               </div>
               <div
                 className="home__customers-stats-item"
@@ -238,7 +242,7 @@ function Home() {
               >
                 <CountUp to={1000000} prefix="+ " />
                 <span className="home__customers-stats-label">
-                  LEADS GENERATED
+                  LEADS GENERATED across client campaigns
                 </span>
               </div>
             </div>
@@ -248,9 +252,9 @@ function Home() {
         {/* ── CTA ──────────────────────────────────────────────── */}
         <section className="home__cta">
           <div className="home__cta-cont" data-animate="scale-up">
-            <h1 className="home__cta-cont-h1">
+            <h2 className="home__cta-cont-h1">
               Ready to deploy your business to success?
-            </h1>
+            </h2>
             <p className="home__cta-offer">
               Ignite your business growth with a FREE custom GTM strategy
             </p>

@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import { writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 
-const SITE_URL = 'https://deploystudio.net'
+const SITE_URL = 'https://www.deploystudio.net'
 
 const routes = [
   { path: '/', changefreq: 'weekly', priority: 1.0 },

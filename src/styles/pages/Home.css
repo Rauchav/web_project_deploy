@@ -64,6 +64,12 @@
   margin-bottom: 20px;
 }
 
+.hero__cta-sub {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 20px;
+}
+
 .home__cta-offer {
   font-size: 14px;
 }

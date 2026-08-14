@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 function ServiceSection({ id, title, tabs }) {
   const [activeTab, setActiveTab] = useState(0);
   const navigate = useNavigate();
-  const active = tabs[activeTab];
 
   return (
     <section id={id} className="services__section">
@@ -33,31 +32,39 @@ function ServiceSection({ id, title, tabs }) {
           ))}
         </div>
 
-        {/* key forces remount on tab change, restarting the CSS animation */}
-        <div
-          key={activeTab}
-          className="services__section-cont services__section-cont--enter"
-        >
-          <div className="serivce__section-cont-text">
-            <h3 className="service__section-cont-subtitle">
-              {active.subtitle}
-            </h3>
-            <p className="service__section-cont-text-p">{active.description}</p>
-            <button
-              className="cta-button-contactus"
-              onClick={() => navigate("/contact")}
-            >
-              GET STARTED
-            </button>
+        {/* All panels stay in the DOM so crawlers and AI bots can read every
+            description, not just the active one; [hidden] controls visibility */}
+        {tabs.map((tab, i) => (
+          <div
+            key={tab.label}
+            hidden={activeTab !== i}
+            className={
+              activeTab === i
+                ? "services__section-cont services__section-cont--enter"
+                : "services__section-cont"
+            }
+          >
+            <div className="serivce__section-cont-text">
+              <h3 className="service__section-cont-subtitle">
+                {tab.subtitle}
+              </h3>
+              <p className="service__section-cont-text-p">{tab.description}</p>
+              <button
+                className="cta-button-contactus"
+                onClick={() => navigate("/contact")}
+              >
+                GET STARTED
+              </button>
+            </div>
+            <div className="service__section-cont-img-cont">
+              <img
+                className="service__section-cont-img"
+                src={tab.image}
+                alt={tab.subtitle}
+              />
+            </div>
           </div>
-          <div className="service__section-cont-img-cont">
-            <img
-              className="service__section-cont-img"
-              src={active.image}
-              alt={active.subtitle}
-            />
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );

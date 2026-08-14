@@ -299,7 +299,7 @@ function Contact() {
             <h1 className="contact__success-title">You're all set!</h1>
             <p className="contact__success-text">
               Thank you for the time you spent filling out this information, it
-              help us craft something truly useful for your bsuiness.
+              helps us craft something truly useful for your business.
             </p>
             <p className="contact__success-subtext">
               We're already reviewing your answers. Expect a Deploy Studio email
@@ -329,8 +329,8 @@ function Contact() {
   return (
     <>
       <Seo
-        title="Free Consultation | Custom Growth Strategy – Deploy Studio"
-        description="Get a free, personalized consultation from Deploy Studio. Tell us about your business and marketing goals — no sales call, no commitment."
+        title="Free Marketing Consultation | Deploy Studio"
+        description="Get a free custom growth strategy covering web development, marketing, and content — tailored to your business, with no sales call required."
         path="/contact"
       />
       <main className="contact">

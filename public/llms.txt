@@ -1,0 +1,19 @@
+# Deploy Studio
+
+> Web development, digital marketing, and content creation studio serving businesses across Europe and North America.
+
+## Pages
+
+- [Home](https://www.deploystudio.net/): overview of all three services
+- [Services](https://www.deploystudio.net/services): web development, digital marketing, content creation — full breakdown
+- [Contact](https://www.deploystudio.net/contact): free custom growth strategy consultation
+
+## Services
+
+Web Development: UX/UI Design, Web/App Development, E-Commerce Development, Custom Software Development
+Digital Marketing: Paid Ads, Email Marketing, AI Automations, SEO & AEO, CRM Management
+Content Creation: Graphic Design, Digital Illustration, Video Production, Animation, 3D Modeling
+
+## Contact
+
+Email: contact@deploystudio.net

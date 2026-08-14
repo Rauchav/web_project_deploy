@@ -51,7 +51,7 @@ export const digitalMarketingTabs = [
     label: "PAID ADS",
     subtitle: "PAID ADS",
     description:
-      "Maximize your reach and conversions with powerful Meta Ads campaigns. We create and optimize high-performing ads tailored to your target audience.",
+      "Maximize reach and conversions with high-performing Meta and Google Ads campaigns. We build, test, and optimize paid ads tailored to your audience and budget.",
     image: paidAds,
   },
   {
