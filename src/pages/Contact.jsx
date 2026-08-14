@@ -298,15 +298,20 @@ function Contact() {
             </div>
             <h1 className="contact__success-title">You're all set!</h1>
             <p className="contact__success-text">
-              Thank you for the time you spent filling out this information — it
-              tells us a lot and will help us craft something truly useful for
-              you.
+              Thank you for the time you spent filling out this information, it
+              help us craft something truly useful for your bsuiness.
             </p>
             <p className="contact__success-subtext">
-              We're already reviewing your answers. Expect a detailed email with
-              your personalized free consultation results at{" "}
+              We're already reviewing your answers. Expect a Deploy Studio email
+              with your personalized free consultation results at{" "}
               <span className="contact__success-email">{data.email}</span>{" "}
-              within the next 24–48 hours.
+              within the next 10 minutes.
+              <br />
+              Check out your{" "}
+              <span className="contact__success-email">
+                "Promotions"
+              </span> or <span className="contact__success-email">"Spam"</span>{" "}
+              inbox, sometimes our emails initially land there.
             </p>
             <button
               className="cta-button-contactus contact__success-btn"
@@ -332,15 +337,15 @@ function Contact() {
         <div className="contact__wrapper">
           <div className="contact__header">
             <h1 className="contact__title">
-              Take off with a free custom strategy
+              Get started with a custom free "Go to Market" strategy
             </h1>
             <p className="contact__subtitle">
               {" "}
               In order to provide you with a useful personalized Automated
               Marketing Strategy, we need to have a clear understanding of your
               business and your market. Please fill out this brief form, and
-              within minutes, you will receive the results of your free
-              consultation at your email address.
+              within minutes, we will send your custom strategy document right
+              to your email .
             </p>
           </div>
 
