@@ -128,7 +128,7 @@ function Services() {
               success awaits for those who try
             </h2>
             <p className="services__cta-offer">
-              Ignite your business growth with a FREE custom GTM strategy
+              Ignite your growth with a FREE personalized assessment
             </p>
             <div className="cta-buttons">
               <button

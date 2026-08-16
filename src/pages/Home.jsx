@@ -89,8 +89,7 @@ function Home() {
             </h1>
             <p className="hero__cta-sub">
               We apply to your business, the same automated marketing & sales
-              best practices the big players use. Their same recipe for real
-              growth.
+              best practices the big players use to experience real growth.
             </p>
             <div className="cta-buttons">
               <button
@@ -258,7 +257,7 @@ function Home() {
               Ready to deploy your business to success?
             </h2>
             <p className="home__cta-offer">
-              Ignite your growth with a FREE custom GTM strategy
+              Ignite your growth with a FREE personalized assessment
             </p>
             <div className="cta-buttons">
               <button
