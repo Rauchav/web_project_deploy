@@ -257,7 +257,7 @@ function Home() {
               Ready to deploy your business to success?
             </h2>
             <p className="home__cta-offer">
-              Ignite your growth with a FREE personalized assessment
+              Ignite your growth with a FREE personalized business strategy
             </p>
             <div className="cta-buttons">
               <button

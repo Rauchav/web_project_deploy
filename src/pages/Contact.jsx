@@ -337,15 +337,16 @@ function Contact() {
         <div className="contact__wrapper">
           <div className="contact__header">
             <h1 className="contact__title">
-              Get started with a free personalized assessment
+              Get started with a free personalized strategy
             </h1>
             <p className="contact__subtitle">
               {" "}
-              In order to provide you with a useful personalized assessment of
-              how to automate and optimize your online business operations, we
-              need to have a clear understanding of your business and your
-              market. Please fill out this brief form, and within minutes, we
-              will send your custom strategy document right to your email .
+              In order to provide you with a useful personalized strataegy for
+              your business, we will run a complete assestment on how could you
+              automate and optimize your online operations. To do so, we need to
+              have a clear understanding of your business and your market.
+              Please fill out this brief form, and within minutes, we will send
+              your custom strategy document right to your email.
             </p>
           </div>
 
