@@ -1,18 +1,26 @@
 # Deploy Studio
 
-> Web development, digital marketing, and content creation studio serving businesses across Europe and North America.
+> AI automation agency that designs, builds and runs AI agents and automated workflows for marketing, e-commerce, content creation and custom web products. Serving businesses across Europe, North America and Latin America.
 
 ## Pages
 
-- [Home](https://www.deploystudio.net/): overview of all three services
-- [Services](https://www.deploystudio.net/services): web development, digital marketing, content creation — full breakdown
-- [Contact](https://www.deploystudio.net/contact): free custom growth strategy consultation
+- [Home](https://www.deploystudio.net/): overview of Deploy Studio's AI automation services and process
+- [Services](https://www.deploystudio.net/services): full breakdown of AI marketing automation, AI e-commerce automation, AI content creation and custom AI web products, plus FAQ
+- [Free AI Automation Consultancy](https://www.deploystudio.net/contact): short form that returns a personalized AI automation roadmap by email, no sales call
 
 ## Services
 
-Web Development: UX/UI Design, Web/App Development, E-Commerce Development, Custom Software Development
-Digital Marketing: Paid Ads, Email Marketing, AI Automations, SEO & AEO, CRM Management
-Content Creation: Graphic Design, Digital Illustration, Video Production, Animation, 3D Modeling
+AI Marketing Automation: AI Lead & Sales Agents, AI-Powered Paid Ads, AI Email Marketing, CRM & Pipeline Automation, SEO, AEO & GEO
+AI E-commerce Automation: AI-Ready Store Development, AI Shopping Assistants & Support, Product Catalog Automation, Cart Recovery & Retention, Order & Inventory Automation
+AI Content Creation: AI Images & Ad Creatives, AI Video Production, AI Voice & Audio, AI Animation & Motion, AI 3D Modeling
+Custom AI Web Products: AI-Ready Websites, Web & Mobile Apps, Custom AI Tools & SaaS, Dashboards & Client Portals, AI Integrations & Workflows
+
+## How we work
+
+1. Audit: map operations and find the highest-ROI automations
+2. Design: blueprint the AI agents, workflows and tools
+3. Deploy: build, integrate and launch into the client's stack
+4. Optimize: monitor, measure and improve monthly
 
 ## Contact
 

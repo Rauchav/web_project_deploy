@@ -53,7 +53,7 @@ function ServiceSection({ id, title, tabs }) {
                 className="cta-button-contactus"
                 onClick={() => navigate("/contact")}
               >
-                GET STARTED
+                GET MY FREE AI CONSULTANCY
               </button>
             </div>
             <div className="service__section-cont-img-cont">

@@ -492,3 +492,14 @@
     line-height: 34px;
   }
 }
+
+/* --- Process steps (reuses the stats grid) ---------------- */
+
+.home__process .home__customers-stats-grid {
+  list-style: none;
+  padding: 0;
+}
+
+.home__process .home__customers-stats-label {
+  max-width: 220px;
+}

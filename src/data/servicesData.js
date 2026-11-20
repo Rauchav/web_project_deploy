@@ -1,123 +1,175 @@
-import uiuxDesign from "../assets/images/services/web-development/uiux-design.png";
-import webAppDev from "../assets/images/services/web-development/webapp-dev.jpeg";
-import eCommerceDev from "../assets/images/services/web-development/e-commerce.png";
-import customSoftDev from "../assets/images/services/web-development/custom-software.png";
-
+import aiLeadAgents from "../assets/images/services/digital-marketing/ai-automtions.png";
 import paidAds from "../assets/images/services/digital-marketing/paid-ads.png";
 import emailMarketing from "../assets/images/services/digital-marketing/email-marketing.png";
-import aiAutomations from "../assets/images/services/digital-marketing/ai-automtions.png";
-import seoAeo from "../assets/images/services/digital-marketing/seo-aeo.png";
 import crmManagement from "../assets/images/services/digital-marketing/crm-management.png";
+import seoAeo from "../assets/images/services/digital-marketing/seo-aeo.png";
 
-import graphicDesign from "../assets/images/services/content-creation/graphic-design.png";
-import digitalIllustration from "../assets/images/services/content-creation/digital-illustration.png";
-import videoProduction from "../assets/images/services/content-creation/video-production.png";
-import animationImg from "../assets/images/services/content-creation/animation.png";
-import modeling3d from "../assets/images/services/content-creation/3d-modeling.png";
+import aiStoreDev from "../assets/images/services/ai-ecommerce/ai-store-development.png";
+import aiShoppingAssistant from "../assets/images/services/ai-ecommerce/ai-shopping-assistant.png";
+import catalogAutomation from "../assets/images/services/ai-ecommerce/catalog-automation.png";
+import cartRecovery from "../assets/images/services/ai-ecommerce/cart-recovery.png";
+import orderAutomation from "../assets/images/services/ai-ecommerce/order-automation.png";
 
-export const webDevelopmentTabs = [
-  {
-    label: "UX/UI DESIGN",
-    subtitle: "UX/UI DESIGN",
-    description:
-      "We create intuitive and visually stunning designs that enhance user experience and engagement. Our UI/UX solutions ensure seamless navigation, keeping your audience hooked and driving conversions.",
-    image: uiuxDesign,
-  },
-  {
-    label: "WEB/APP DEVELOPMENT",
-    subtitle: "WEB/APP DEVELOPMENT",
-    description:
-      "From dynamic websites to feature-rich mobile apps, we build high-performance digital platforms tailored to your needs. Scalable, secure, and optimized for success.",
-    image: webAppDev,
-  },
-  {
-    label: "E-COMMERCE DEVELOPMENT",
-    subtitle: "E-COMMERCE DEVELOPMENT",
-    description:
-      "Boost your online sales with a fully customized e-commerce store. We develop secure, user-friendly, and conversion-focused platforms that drive revenue and customer satisfaction.",
-    image: eCommerceDev,
-  },
-  {
-    label: "CUSTOM SOFTWARE DEVELOPMENT",
-    subtitle: "CUSTOM SOFTWARE DEVELOPMENT",
-    description:
-      "Need a unique digital solution? We develop custom software tailored to your business, streamlining operations and enhancing efficiency with innovative technology.",
-    image: customSoftDev,
-  },
-];
+import aiImages from "../assets/images/services/content-creation/graphic-design.png";
+import aiVideo from "../assets/images/services/content-creation/video-production.png";
+import aiVoiceAudio from "../assets/images/services/content-creation/ai-voice-audio.png";
+import aiAnimation from "../assets/images/services/content-creation/animation.png";
+import ai3dModeling from "../assets/images/services/content-creation/3d-modeling.png";
 
-export const digitalMarketingTabs = [
+import aiWebsites from "../assets/images/services/web-development/uiux-design.png";
+import webAppDev from "../assets/images/services/web-development/webapp-dev.jpeg";
+import customAiTools from "../assets/images/services/web-development/custom-software.png";
+import dashboardsPortals from "../assets/images/services/web-development/dashboards-portals.png";
+import aiIntegrations from "../assets/images/services/web-development/ai-integrations.png";
+
+export const aiMarketingTabs = [
   {
-    label: "PAID ADS",
-    subtitle: "PAID ADS",
+    label: "AI LEAD & SALES AGENTS",
+    subtitle: "AI AGENTS THAT CAPTURE, QUALIFY AND BOOK YOUR LEADS 24/7",
     description:
-      "Maximize reach and conversions with high-performing Meta and Google Ads campaigns. We build, test, and optimize paid ads tailored to your audience and budget.",
+      "Our AI sales agents answer every inbound lead on your website, WhatsApp, Instagram and email in seconds, ask the right qualifying questions, score intent and book meetings straight into your calendar. No lead waits, no lead is forgotten, and your sales team only talks to buyers who are ready.",
+    image: aiLeadAgents,
+  },
+  {
+    label: "AI-POWERED PAID ADS",
+    subtitle: "PAID ADS OPTIMIZED BY AI, MANAGED BY STRATEGISTS",
+    description:
+      "We run Meta, Google, TikTok and LinkedIn Ads with AI-generated creative variations, automated budget reallocation and real-time performance alerts. Winning ads scale automatically, underperformers are paused, and you get a clear view of cost per lead and return on ad spend.",
     image: paidAds,
   },
   {
-    label: "EMAIL MARKETING",
-    subtitle: "EMAIL MARKETING",
+    label: "AI EMAIL MARKETING",
+    subtitle: "PERSONALIZED EMAIL AND SMS FLOWS THAT WRITE THEMSELVES",
     description:
-      "Turn leads into loyal customers with strategic email marketing. We create automated and personalized campaigns that nurture relationships and drive sales.",
+      "Behavior-triggered email and SMS sequences with AI-personalized copy for every segment: welcome series, nurturing, re-engagement and post-purchase flows that turn subscribers into repeat customers on platforms like Klaviyo, HubSpot and ActiveCampaign.",
     image: emailMarketing,
   },
   {
-    label: "AI AUTOMATIONS",
-    subtitle: "AI AUTOMATIONS",
+    label: "CRM & PIPELINE AUTOMATION",
+    subtitle: "A CRM THAT UPDATES ITSELF AND TELLS YOU WHO TO CALL NEXT",
     description:
-      "Let your lead capturing, lead nurturing, and customer support operations run automatically through powerful AI agents that will allow you to focus on decision-making and growth.",
-    image: aiAutomations,
-  },
-  {
-    label: "SEO & AEO",
-    subtitle: "SEO & AEO",
-    description:
-      "Boost your visibility and rank higher on search engines with expert SEO & SEM strategies. We optimize your online presence for long-term success.",
-    image: seoAeo,
-  },
-  {
-    label: "CRM MANAGEMENT",
-    subtitle: "CRM MANAGEMENT",
-    description:
-      "Streamline your customer relationships with advanced CRM management. We optimize workflows, automate processes, and enhance customer interactions for better engagement and retention.",
+      "We connect your forms, ads, inbox and calls to your CRM, then let AI enrich contacts, log conversations, summarize meetings, move deals through the pipeline and trigger follow-ups. Your team stops doing data entry and every opportunity gets worked.",
     image: crmManagement,
+  },
+  {
+    label: "SEO, AEO & GEO",
+    subtitle: "GET FOUND ON GOOGLE AND RECOMMENDED BY CHATGPT, GEMINI AND PERPLEXITY",
+    description:
+      "Search now happens in Google and in AI assistants. We combine technical SEO, answer engine optimization (AEO) and generative engine optimization (GEO) with AI-assisted content workflows, so your brand ranks in search results and gets cited in AI-generated answers.",
+    image: seoAeo,
   },
 ];
 
-export const contentCreationTabs = [
+export const aiEcommerceTabs = [
   {
-    label: "GRAPHIC DESIGN",
-    subtitle: "GRAPHIC DESIGN",
+    label: "AI-READY STORE DEVELOPMENT",
+    subtitle: "E-COMMERCE STORES BUILT TO BE RUN BY AUTOMATIONS",
     description:
-      "Stand out with visually compelling graphics that capture attention. From branding to marketing materials, we create designs that make a lasting impact.",
-    image: graphicDesign,
+      "We design and develop Shopify, WooCommerce and headless e-commerce stores with fast checkout, clean product data and native integrations to your CRM, ads, inventory and AI agents, so every part of your online sales operation can be automated from day one.",
+    image: aiStoreDev,
   },
   {
-    label: "DIGITAL ILLUSTRATION",
-    subtitle: "DIGITAL ILLUSTRATION",
+    label: "AI SHOPPING ASSISTANTS & SUPPORT",
+    subtitle: "AN AI SALES ASSISTANT AND SUPPORT TEAM THAT NEVER SLEEPS",
     description:
-      "Bring your ideas to life with custom digital illustrations that enhance your brand's storytelling. From eye-catching social media graphics to detailed artwork for marketing campaigns, we create unique visuals that captivate and engage your audience.",
-    image: digitalIllustration,
+      "AI shopping assistants trained on your catalog and policies recommend products, answer questions, recover hesitant buyers and resolve order-status, returns and shipping requests instantly across chat, WhatsApp and email, escalating to a human only when it matters.",
+    image: aiShoppingAssistant,
   },
   {
-    label: "VIDEO PRODUCTION",
-    subtitle: "VIDEO PRODUCTION",
+    label: "PRODUCT CATALOG AUTOMATION",
+    subtitle: "THOUSANDS OF PRODUCT LISTINGS, WRITTEN AND OPTIMIZED BY AI",
     description:
-      "Engage your audience with high-quality video content. From promotional videos to brand storytelling, we produce compelling visuals that drive results.",
-    image: videoProduction,
+      "Generate SEO-optimized product titles, descriptions, attributes, translations and on-brand product images in bulk, then sync them automatically to your store, Google Shopping, Amazon and social marketplaces. Launch new products in hours instead of weeks.",
+    image: catalogAutomation,
   },
   {
-    label: "ANIMATION",
-    subtitle: "ANIMATION",
+    label: "CART RECOVERY & RETENTION",
+    subtitle: "AUTOMATED FLOWS THAT WIN BACK CARTS AND CUSTOMERS",
     description:
-      "Bring your ideas to life with motion graphics and animations. Perfect for explainer videos, ads, and engaging social media content.",
-    image: animationImg,
+      "AI-personalized abandoned cart, browse abandonment, upsell, cross-sell, replenishment and win-back flows that react to each shopper's behavior in real time to increase conversion rate, average order value and customer lifetime value.",
+    image: cartRecovery,
   },
   {
-    label: "3D MODELING",
-    subtitle: "3D MODELING",
+    label: "ORDER & INVENTORY AUTOMATION",
+    subtitle: "ORDERS, STOCK AND FULFILLMENT ON AUTOPILOT",
     description:
-      "Immerse your audience with stunning 3D visuals. From product modeling to architectural renderings, we create lifelike designs that elevate your brand.",
-    image: modeling3d,
+      "From order confirmation to invoicing, stock alerts, supplier reorders, shipping labels and review requests, we automate your back office so your store scales without scaling your workload or your error rate.",
+    image: orderAutomation,
+  },
+];
+
+export const aiContentTabs = [
+  {
+    label: "AI IMAGES & AD CREATIVES",
+    subtitle: "ON-BRAND AI IMAGES AND AD CREATIVES AT SCALE",
+    description:
+      "Product photography, lifestyle scenes, social posts and dozens of ad creative variations generated with AI and art-directed by designers. We train custom models on your brand style so every visual stays consistent, and you can test more ideas for a fraction of the cost of a photoshoot.",
+    image: aiImages,
+  },
+  {
+    label: "AI VIDEO PRODUCTION",
+    subtitle: "AI VIDEO PRODUCTION FOR ADS, SOCIAL MEDIA AND PRODUCT LAUNCHES",
+    description:
+      "Short-form videos, UGC-style ads, product demos, explainers and AI avatar presenters produced with generative video tools and professional editing. Turn one brief into a full month of video content for Reels, TikTok, YouTube Shorts and paid campaigns.",
+    image: aiVideo,
+  },
+  {
+    label: "AI VOICE & AUDIO",
+    subtitle: "AI VOICE-OVERS, PODCASTS AND SOUND IN ANY LANGUAGE",
+    description:
+      "Natural-sounding AI voice-overs, cloned brand voices, multilingual dubbing, podcast production, jingles and sound design. Localize your videos and ads into new markets without booking a studio.",
+    image: aiVoiceAudio,
+  },
+  {
+    label: "AI ANIMATION & MOTION",
+    subtitle: "AI-ASSISTED ANIMATION AND MOTION GRAPHICS",
+    description:
+      "Animated explainers, logo animations, motion graphics and animated product stories created with AI-assisted pipelines. Studio-quality animation delivered faster, ready for your website, ads and social channels.",
+    image: aiAnimation,
+  },
+  {
+    label: "AI 3D MODELING",
+    subtitle: "AI 3D MODELS, PRODUCT RENDERS AND IMMERSIVE VISUALS",
+    description:
+      "Photorealistic 3D product models, 360° viewers, AR-ready assets and renders generated from photos or sketches with AI 3D tools and refined by our 3D artists. Show every angle and variant of your product without a physical sample.",
+    image: ai3dModeling,
+  },
+];
+
+export const customWebTabs = [
+  {
+    label: "AI-READY WEBSITES",
+    subtitle: "HIGH-CONVERTING WEBSITES BUILT FOR SEARCH ENGINES AND AI ASSISTANTS",
+    description:
+      "Fast, conversion-focused websites with UX/UI design, structured data and llms.txt built in, connected to your CRM and AI agents. Your site captures, qualifies and routes leads automatically, and is easy for both Google and AI search engines to understand.",
+    image: aiWebsites,
+  },
+  {
+    label: "WEB & MOBILE APPS",
+    subtitle: "SCALABLE WEB AND MOBILE APPS WITH AI BUILT IN",
+    description:
+      "From MVPs to production platforms, we build secure, scalable web and mobile applications with AI features such as smart search, recommendations, document processing and conversational interfaces, tailored to how your customers and team actually work.",
+    image: webAppDev,
+  },
+  {
+    label: "CUSTOM AI TOOLS & SAAS",
+    subtitle: "CUSTOM AI TOOLS DESIGNED AROUND YOUR BUSINESS",
+    description:
+      "Internal copilots, AI assistants trained on your company knowledge, proposal and quote generators, and AI-powered SaaS products. We turn the expertise inside your business into software that works for you around the clock.",
+    image: customAiTools,
+  },
+  {
+    label: "DASHBOARDS & CLIENT PORTALS",
+    subtitle: "REAL-TIME DASHBOARDS AND PORTALS THAT REPLACE SPREADSHEETS",
+    description:
+      "Live dashboards that unify sales, marketing and operations data, plus client and partner portals with self-service onboarding, documents and status tracking. Make faster decisions with data that updates itself.",
+    image: dashboardsPortals,
+  },
+  {
+    label: "AI INTEGRATIONS & WORKFLOWS",
+    subtitle: "CONNECT YOUR TOOLS AND LET AI RUN THE WORKFLOWS BETWEEN THEM",
+    description:
+      "We engineer end-to-end automations with n8n, Make, Zapier and custom APIs, connecting your CRM, e-commerce, ERP, accounting and communication tools to large language models like GPT, Claude and Gemini. This is the backbone of your company's digital transformation.",
+    image: aiIntegrations,
   },
 ];

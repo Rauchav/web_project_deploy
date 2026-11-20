@@ -9,6 +9,25 @@ import { TOOLS } from "../data/tools";
 
 /* ── Data ───────────────────────────────────────────────────── */
 
+const AUTOMATION_AREAS = [
+  "Lead capture & qualification",
+  "Sales follow-ups",
+  "Customer support",
+  "Email & SMS marketing",
+  "CRM & pipeline updates",
+  "Paid ads & reporting",
+  "SEO & blog content",
+  "Social media content",
+  "Product photos & videos",
+  "Product catalog & listings",
+  "Orders, inventory & fulfillment",
+  "Invoicing & admin",
+  "Internal reports & dashboards",
+  "Not sure yet",
+];
+
+const TEAM_SIZES = ["Just me", "2–10", "11–50", "51–200", "200+"];
+
 const LEAD_CHANNELS = [
   "Social Media Organic",
   "Social Media Ads",
@@ -34,8 +53,8 @@ const BUDGET_OPTIONS = [
 const STEPS = [
   { number: 1, label: "You & Your Company" },
   { number: 2, label: "Your Business" },
-  { number: 3, label: "Your Marketing" },
-  { number: 4, label: "Vision & Budget" },
+  { number: 3, label: "Your Operations" },
+  { number: 4, label: "Goals & Budget" },
 ];
 
 const INITIAL_DATA = {
@@ -47,8 +66,10 @@ const INITIAL_DATA = {
   core_offer: "",
   target_customers: "",
   market_location: [],
+  team_size: "",
+  automation_areas: [],
+  manual_tasks: "",
   lead_channels: [],
-  sales_process: "",
   current_tools: [],
   expansion_vision: "",
   budget_range: "",
@@ -70,8 +91,10 @@ function validate(step, data) {
       return "Please describe your ideal customers.";
   }
   if (step === 3) {
-    if (data.lead_channels.length === 0)
-      return "Please select at least one lead channel.";
+    if (data.automation_areas.length === 0)
+      return "Please select at least one area you'd like to automate.";
+    if (!data.manual_tasks.trim())
+      return "Please tell us which tasks take up most of your team's time.";
   }
   if (step === 4) {
     if (!data.budget_range) return "Please select a budget range.";
@@ -164,20 +187,12 @@ function Contact() {
     setEmailSuggestion(null);
   };
 
-  const toggleChannel = (ch) =>
+  const toggleIn = (key, val) =>
     setData((prev) => ({
       ...prev,
-      lead_channels: prev.lead_channels.includes(ch)
-        ? prev.lead_channels.filter((c) => c !== ch)
-        : [...prev.lead_channels, ch],
-    }));
-
-  const toggleTool = (tool) =>
-    setData((prev) => ({
-      ...prev,
-      current_tools: prev.current_tools.includes(tool)
-        ? prev.current_tools.filter((t) => t !== tool)
-        : [...prev.current_tools, tool],
+      [key]: prev[key].includes(val)
+        ? prev[key].filter((v) => v !== val)
+        : [...prev[key], val],
     }));
 
   const setBudget = (val) =>
@@ -215,32 +230,7 @@ function Contact() {
           "VITE_N8N_WEBHOOK_URL is not configured. Set it in the environment before deploying.",
         );
       }
-      if (import.meta.env.DEV) {
-        if (webhookUrl) {
-          const tools = [
-            ...data.current_tools.filter((t) => t !== "Other"),
-            ...(data.current_tools.includes("Other") && otherTool.trim()
-              ? [otherTool.trim()]
-              : []),
-          ];
-          const res = await fetch(webhookUrl, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              ...data,
-              lead_channels: data.lead_channels.join(", "),
-              market_location: data.market_location.join(", "),
-              current_tools: tools.join(", "),
-              submitted_at: new Date().toISOString(),
-            }),
-          });
-          if (!res.ok) throw new Error("Webhook responded with an error.");
-        } else {
-          console.warn(
-            "VITE_N8N_WEBHOOK_URL is not set; skipping webhook request in development.",
-          );
-        }
-      } else {
+      if (webhookUrl) {
         const tools = [
           ...data.current_tools.filter((t) => t !== "Other"),
           ...(data.current_tools.includes("Other") && otherTool.trim()
@@ -252,6 +242,7 @@ function Contact() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             ...data,
+            automation_areas: data.automation_areas.join(", "),
             lead_channels: data.lead_channels.join(", "),
             market_location: data.market_location.join(", "),
             current_tools: tools.join(", "),
@@ -259,6 +250,10 @@ function Contact() {
           }),
         });
         if (!res.ok) throw new Error("Webhook responded with an error.");
+      } else {
+        console.warn(
+          "VITE_N8N_WEBHOOK_URL is not set; skipping webhook request in development.",
+        );
       }
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -278,7 +273,7 @@ function Contact() {
       <>
         <Seo
           title="Thank You | Deploy Studio"
-          description="Thanks for requesting your free consultation with Deploy Studio. We're reviewing your answers and will follow up with a personalized growth strategy soon."
+          description="Thanks for requesting your free AI automation consultancy with Deploy Studio. Your personalized AI automation roadmap is on its way."
           path="/contact"
         />
         <main className="contact">
@@ -298,12 +293,13 @@ function Contact() {
             </div>
             <h1 className="contact__success-title">You're all set!</h1>
             <p className="contact__success-text">
-              Thank you for the time you spent filling out this information, it
-              helps us craft something truly useful for your business.
+              Thank you for walking us through your operations. It helps us
+              pinpoint exactly where AI can save your team time and grow your
+              revenue.
             </p>
             <p className="contact__success-subtext">
-              We're already reviewing your answers. Expect a Deploy Studio email
-              with your personalized free consultation results at{" "}
+              We're already analyzing your answers. Expect a Deploy Studio email
+              with your personalized AI automation roadmap at{" "}
               <span className="contact__success-email">{data.email}</span>{" "}
               within the next 10 minutes.
               <br />
@@ -329,24 +325,23 @@ function Contact() {
   return (
     <>
       <Seo
-        title="Free Marketing Consultation | Deploy Studio"
-        description="Get a free custom growth strategy covering web development, marketing, and content — tailored to your business, with no sales call required."
+        title="Free AI Automation Consultancy | Deploy Studio"
+        description="Get a free AI automation consultancy: a personalized roadmap showing which marketing, sales, e-commerce and content processes to automate first. No sales call required."
         path="/contact"
       />
       <main className="contact">
         <div className="contact__wrapper">
           <div className="contact__header">
             <h1 className="contact__title">
-              Get started with a free personalized strategy
+              Get your free AI automation consultancy
             </h1>
             <p className="contact__subtitle">
-              {" "}
-              In order to provide you with a useful personalized strataegy for
-              your business, we will run a complete assestment on how could you
-              automate and optimize your online operations. To do so, we need to
-              have a clear understanding of your business and your market.
-              Please fill out this brief form, and within minutes, we will send
-              your custom strategy document right to your email.
+              Tell us how your business runs today. We'll analyze your
+              operations and map exactly where AI agents and automated
+              workflows can save time, cut costs and grow revenue across your
+              marketing, sales, content and internal processes. It takes about
+              5 minutes, and your personalized AI automation roadmap lands in
+              your inbox within minutes. No sales call, no commitment.
             </p>
           </div>
 
@@ -481,19 +476,68 @@ function Contact() {
                     placeholder="e.g. Europe, North America, or Miami, United States"
                   />
                 </div>
+                <div className="contact__field">
+                  <label className="contact__label">
+                    How big is your team?{" "}
+                    <span className="contact__opt">(optional)</span>
+                  </label>
+                  <div className="contact__pills">
+                    {TEAM_SIZES.map((size) => (
+                      <button
+                        key={size}
+                        type="button"
+                        className={`contact__pill${data.team_size === size ? " contact__pill--active" : ""}`}
+                        onClick={() => setField("team_size")(size)}
+                      >
+                        {size}
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
             )}
 
-            {/* ── Step 3: Current marketing ─────────────────────── */}
+            {/* ── Step 3: Current operations ────────────────────── */}
             {step === 3 && (
               <div className="contact__fields">
                 <h3 className="contact__step-title">
-                  How do you market and sell today?
+                  How do your operations run today?
                 </h3>
                 <div className="contact__field">
                   <label className="contact__label">
-                    How do you currently attract new leads?{" "}
+                    Which areas would you like to automate with AI?{" "}
                     <span className="contact__req">*</span>{" "}
+                    <span className="contact__opt">Select all that apply</span>
+                  </label>
+                  <div className="contact__pills">
+                    {AUTOMATION_AREAS.map((area) => (
+                      <button
+                        key={area}
+                        type="button"
+                        className={`contact__pill${data.automation_areas.includes(area) ? " contact__pill--active" : ""}`}
+                        onClick={() => toggleIn("automation_areas", area)}
+                      >
+                        {area}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <div className="contact__field">
+                  <label className="contact__label">
+                    Which repetitive tasks take up most of your team's time?{" "}
+                    <span className="contact__req">*</span>
+                  </label>
+                  <textarea
+                    className="contact__input contact__textarea"
+                    placeholder="We answer the same customer questions on WhatsApp all day, copy leads from Meta Ads into our CRM by hand, and spend two days a month building sales reports in spreadsheets..."
+                    value={data.manual_tasks}
+                    onChange={field("manual_tasks")}
+                    rows={4}
+                  />
+                </div>
+                <div className="contact__field">
+                  <label className="contact__label">
+                    How do you currently attract new leads?{" "}
                     <span className="contact__opt">Select all that apply</span>
                   </label>
                   <div className="contact__pills">
@@ -502,24 +546,12 @@ function Contact() {
                         key={ch}
                         type="button"
                         className={`contact__pill${data.lead_channels.includes(ch) ? " contact__pill--active" : ""}`}
-                        onClick={() => toggleChannel(ch)}
+                        onClick={() => toggleIn("lead_channels", ch)}
                       >
                         {ch}
                       </button>
                     ))}
                   </div>
-                </div>
-                <div className="contact__field">
-                  <label className="contact__label">
-                    How do you close deals and retain clients?
-                  </label>
-                  <textarea
-                    className="contact__input contact__textarea"
-                    placeholder="We follow up by phone, then send a proposal via email. Retention is mostly repeat orders, referrals, and a monthly newsletter..."
-                    value={data.sales_process}
-                    onChange={field("sales_process")}
-                    rows={3}
-                  />
                 </div>
                 <div className="contact__field">
                   <label className="contact__label">
@@ -532,7 +564,7 @@ function Contact() {
                         key={tool}
                         type="button"
                         className={`contact__pill${data.current_tools.includes(tool) ? " contact__pill--active" : ""}`}
-                        onClick={() => toggleTool(tool)}
+                        onClick={() => toggleIn("current_tools", tool)}
                       >
                         {tool}
                       </button>
@@ -555,15 +587,16 @@ function Contact() {
             {step === 4 && (
               <div className="contact__fields">
                 <h3 className="contact__step-title">
-                  Your vision and investment
+                  Your goals and investment
                 </h3>
                 <div className="contact__field">
                   <label className="contact__label">
-                    Do you see room to grow or expand? Where and how?
+                    Where do you want to take your business in the next 12
+                    months?
                   </label>
                   <textarea
                     className="contact__input contact__textarea"
-                    placeholder="We'd like to expand into Mexico and Colombia. We think e-commerce and social media ads could work really well for us given our price point..."
+                    placeholder="Launch our online store in Spain and Germany, double our content output without hiring, and let AI handle first-line customer support..."
                     value={data.expansion_vision}
                     onChange={field("expansion_vision")}
                     rows={3}
@@ -571,7 +604,7 @@ function Contact() {
                 </div>
                 <div className="contact__field">
                   <label className="contact__label">
-                    Approximate monthly marketing budget{" "}
+                    Approximate monthly budget for AI automation and growth{" "}
                     <span className="contact__req">*</span>
                   </label>
                   <div className="contact__budget-grid">
@@ -597,7 +630,7 @@ function Contact() {
                   </label>
                   <textarea
                     className="contact__input contact__textarea"
-                    placeholder="Doubling our monthly leads, reaching 10k followers on Instagram, or landing our first 100 online orders without relying on cold calls..."
+                    placeholder="Saving 20 hours a week of manual work, replying to every lead in under 1 minute, or doubling online orders without adding headcount..."
                     value={data.expected_results}
                     onChange={field("expected_results")}
                     rows={3}
@@ -638,7 +671,7 @@ function Contact() {
                 onClick={handleSubmit}
                 disabled={submitting}
               >
-                {submitting ? "Sending…" : "Get My Free Consultation →"}
+                {submitting ? "Sending…" : "Get My Free AI Roadmap →"}
               </button>
             )}
           </div>
